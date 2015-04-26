@@ -1,0 +1,216 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="js/codigo.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/animations.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<title>Juego de Memoria</title>
+
+
+</head>
+<body>
+
+
+
+	<div id="contenedor">
+	
+		<div id="cuadrado00" onclick="selcection(0,0);"></div>
+		<div id="cuadrado10" onclick="selcection(1,0);"></div>
+		<div id="cuadrado20" onclick="selcection(2,0);"></div>
+		<div id="cuadrado30" onclick="selcection(3,0);"></div>
+		
+
+
+		<div id="cuadrado01" onclick="selcection(0,1);"></div>
+		<div id="cuadrado11" onclick="selcection(1,1);"></div>
+		<div id="cuadrado21" onclick="selcection(2,1);"></div>
+		<div id="cuadrado31" onclick="selcection(3,1);"></div>
+		
+
+
+		<div id="cuadrado02" onclick="selcection(0,2);"></div>
+		<div id="cuadrado12" onclick="selcection(1,2);"></div>
+		<div id="cuadrado22" onclick="selcection(2,2);"></div>
+		<div id="cuadrado32" onclick="selcection(3,2);"></div>
+
+	</div>
+	<script type="text/javascript">
+		Init ();
+	</script>
+		<script type="text/javascript">
+
+	$('#cuadrado00').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado00').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+
+	});
+
+	$('#cuadrado00').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+
+	$('#cuadrado10').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado10').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado10').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+	$('#cuadrado20').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado20').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado20').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+	$('#cuadrado30').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado30').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado30').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+	$('#cuadrado01').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado01').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado01').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+	$('#cuadrado11').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado11').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado11').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+	$('#cuadrado21').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado21').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado21').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+	$('#cuadrado31').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado31').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado31').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+	$('#cuadrado02').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado02').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado02').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+	$('#cuadrado12').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado12').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado12').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+	$('#cuadrado22').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado22').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado22').click(function() {
+		$(this).addClass("stretchRight");
+	});
+
+	$('#cuadrado32').hover(function() {
+		$(this).addClass("pulse");
+	});
+	
+	
+	$('#cuadrado32').mouseleave(function() {
+		$(this).removeClass("pulse");
+		$(this).removeClass("stretchRight");
+	});
+
+	$('#cuadrado32').click(function() {
+		$(this).addClass("stretchRight");
+	});
+	</script>
+</body>
+</html>
