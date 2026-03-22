@@ -17,200 +17,37 @@
 
 	<div id="contenedor">
 	
-		<div id="cuadrado00" onclick="selcection(0,0);"></div>
-		<div id="cuadrado10" onclick="selcection(1,0);"></div>
-		<div id="cuadrado20" onclick="selcection(2,0);"></div>
-		<div id="cuadrado30" onclick="selcection(3,0);"></div>
+		<div id="cuadrado00"></div>
+		<div id="cuadrado10"></div>
+		<div id="cuadrado20"></div>
+		<div id="cuadrado30"></div>
 		
 
 
-		<div id="cuadrado01" onclick="selcection(0,1);"></div>
-		<div id="cuadrado11" onclick="selcection(1,1);"></div>
-		<div id="cuadrado21" onclick="selcection(2,1);"></div>
-		<div id="cuadrado31" onclick="selcection(3,1);"></div>
+		<div id="cuadrado01"></div>
+		<div id="cuadrado11"></div>
+		<div id="cuadrado21"></div>
+		<div id="cuadrado31"></div>
 		
 
 
-		<div id="cuadrado02" onclick="selcection(0,2);"></div>
-		<div id="cuadrado12" onclick="selcection(1,2);"></div>
-		<div id="cuadrado22" onclick="selcection(2,2);"></div>
-		<div id="cuadrado32" onclick="selcection(3,2);"></div>
+		<div id="cuadrado02"></div>
+		<div id="cuadrado12"></div>
+		<div id="cuadrado22"></div>
+		<div id="cuadrado32"></div>
 
 	</div>
+<div id="timer" style="text-align:center; font-size: 18px; color: white; margin-top: 20px; font-weight: bold;">Tiempo: 00:00</div>
+<div id="message" style="text-align:center; font-size: 20px; color: white; margin-top: 20px;"></div>
+	<div style="text-align:center; margin: 10px;">
+		<button id="restartBtn" style="padding: 8px 14px; font-size: 16px; margin-right: 10px;">Reiniciar juego</button>
+		<a href="leaderboard.html" style="display: inline-block; padding: 8px 14px; font-size: 16px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px;">Ver Rankings</a>
+	</div>
 	<script type="text/javascript">
-		Init ();
+		// Init automatico ya lo maneja codigo.js con window load
 	</script>
-		<script type="text/javascript">
-
-	$('#cuadrado00').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado00').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-
-	});
-
-	$('#cuadrado00').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-
-	$('#cuadrado10').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado10').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado10').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-	$('#cuadrado20').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado20').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado20').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-	$('#cuadrado30').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado30').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado30').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-	$('#cuadrado01').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado01').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado01').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-	$('#cuadrado11').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado11').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado11').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-	$('#cuadrado21').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado21').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado21').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-	$('#cuadrado31').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado31').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado31').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-	$('#cuadrado02').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado02').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado02').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-	$('#cuadrado12').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado12').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado12').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-	$('#cuadrado22').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado22').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado22').click(function() {
-		$(this).addClass("stretchRight");
-	});
-
-	$('#cuadrado32').hover(function() {
-		$(this).addClass("pulse");
-	});
-	
-	
-	$('#cuadrado32').mouseleave(function() {
-		$(this).removeClass("pulse");
-		$(this).removeClass("stretchRight");
-	});
-
-	$('#cuadrado32').click(function() {
-		$(this).addClass("stretchRight");
-	});
+	<script type="text/javascript">
+		document.getElementById('restartBtn').addEventListener('click', restartGame);
 	</script>
 </body>
 </html>
