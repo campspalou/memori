@@ -8,13 +8,37 @@
 	<link rel="stylesheet" type="text/css" href="css/animations.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<title>Juego de Memoria</title>
-
-
+	<style>
+		#mode-selector {
+			text-align: center;
+			margin: 20px;
+		}
+		.mode-button {
+			padding: 10px 20px;
+			margin: 5px;
+			font-size: 16px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		.mode-button.active {
+			background-color: #2196F3;
+		}
+		.mode-button:hover {
+			background-color: #45a049;
+		}
+		.mode-button.active:hover {
+			background-color: #0b7dda;
+		}
+	</style>
 </head>
 <body>
-
-
-
+	<div id="mode-selector">
+		<button class="mode-button active" onclick="setGameModeAndStart('solo')">Jugar Solo</button>
+		<button class="mode-button" onclick="setGameModeAndStart('ai')">Competir vs IA</button>
+	</div>
 	<div id="contenedor">
 	
 		<div id="cuadrado00"></div>
@@ -37,6 +61,7 @@
 		<div id="cuadrado32"></div>
 
 	</div>
+<div id="score" style="text-align:center; font-size: 18px; color: white; margin-top: 20px; font-weight: bold; display: none;">Tu: 0 | IA: 0</div>
 <div id="timer" style="text-align:center; font-size: 18px; color: white; margin-top: 20px; font-weight: bold;">Tiempo: 00:00</div>
 <div id="message" style="text-align:center; font-size: 20px; color: white; margin-top: 20px;"></div>
 	<div style="text-align:center; margin: 10px;">
@@ -44,9 +69,13 @@
 		<a href="leaderboard.html" style="display: inline-block; padding: 8px 14px; font-size: 16px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px;">Ver Rankings</a>
 	</div>
 	<script type="text/javascript">
-		// Init automatico ya lo maneja codigo.js con window load
-	</script>
-	<script type="text/javascript">
+		function setGameModeAndStart(mode) {
+			setGameMode(mode);
+			var buttons = document.querySelectorAll('.mode-button');
+			buttons.forEach(btn => btn.classList.remove('active'));
+			event.target.classList.add('active');
+			init();
+		}
 		document.getElementById('restartBtn').addEventListener('click', restartGame);
 	</script>
 </body>
