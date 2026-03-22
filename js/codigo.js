@@ -93,12 +93,15 @@ function updateTurnIndicator() {
         indicator.style.display = 'none';
         return;
     }
+    indicator.style.display = 'block';
     if (isPlayerTurn) {
         indicator.textContent = '🎮 Tu turno';
         indicator.className = 'player-turn';
+        indicator.style.backgroundColor = 'rgba(76, 175, 80, 0.8)';
     } else {
         indicator.textContent = '🤖 Turno de la IA';
         indicator.className = 'ai-turn';
+        indicator.style.backgroundColor = 'rgba(244, 67, 54, 0.8)';
     }
 }
 
