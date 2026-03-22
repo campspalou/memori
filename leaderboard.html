@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <title>Rankings - Juego de Memoria</title>
+    <style>
+        body {
+            background-image: url("Imagen/fondo.jpg");
+            background-color: green;
+            background-size: 100% 200%;
+            background-repeat: no-repeat;
+        }
+        
+        #leaderboard-container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 600px;
+            margin-top: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+        
+        th {
+            background-color: #4CAF50;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 2px solid white;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover {
+            background-color: rgba(76, 175, 80, 0.3);
+        }
+        
+        .rank {
+            font-weight: bold;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+        
+        .medal {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        
+        #empty-message {
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            padding: 20px;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        a, button {
+            display: inline-block;
+            padding: 10px 16px;
+            margin: 0 5px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        a:hover, button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="leaderboard-container">
+        <h1>🏆 Mejores Tiempos</h1>
+        <div id="leaderboard-content"></div>
+        <div class="button-container">
+            <a href="memoria.html">Volver al Juego</a>
+            <button onclick="clearScores()">Limpiar Rankings</button>
+        </div>
+    </div>
+
+    <script>
+        function formatTime(seconds) {
+            var mins = Math.floor(seconds / 60);
+            var secs = seconds % 60;
+            return (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+        }
+
+        function getMedal(position) {
+            var medals = ['🥇', '🥈', '🥉'];
+            return position < 3 ? medals[position] : (position + 1) + 'º';
+        }
+
+        function displayLeaderboard() {
+            var contentDiv = document.getElementById('leaderboard-content');
+            var scores = JSON.parse(localStorage.getItem('memoriaScores')) || [];
+            
+            if (scores.length === 0) {
+                contentDiv.innerHTML = '<div id="empty-message">No hay tiempos registrados. ¡Juega para registrar tu primer tiempo!</div>';
+                return;
+            }
+            
+            var tableHTML = '<table><thead><tr><th>Posición</th><th>Tiempo</th><th>Fecha</th></tr></thead><tbody>';
+            
+            scores.forEach(function(score, index) {
+                tableHTML += '<tr>';
+                tableHTML += '<td><span class="medal">' + getMedal(index) + '</span></td>';
+                tableHTML += '<td>' + formatTime(score.time) + '</td>';
+                tableHTML += '<td>' + score.date + '</td>';
+                tableHTML += '</tr>';
+            });
+            
+            tableHTML += '</tbody></table>';
+            contentDiv.innerHTML = tableHTML;
+        }
+
+        function clearScores() {
+            if (confirm('¿Estás seguro de que quieres limpiar todos los rankings?')) {
+                localStorage.removeItem('memoriaScores');
+                displayLeaderboard();
+            }
+        }
+
+        window.addEventListener('load', displayLeaderboard);
+    </script>
+</body>
+</html>
