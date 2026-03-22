@@ -87,6 +87,21 @@ function updateScoreDisplay() {
     }
 }
 
+function updateTurnIndicator() {
+    var indicator = document.getElementById('turn-indicator');
+    if (gameMode !== 'ai') {
+        indicator.style.display = 'none';
+        return;
+    }
+    if (isPlayerTurn) {
+        indicator.textContent = '🎮 Tu turno';
+        indicator.className = 'player-turn';
+    } else {
+        indicator.textContent = '🤖 Turno de la IA';
+        indicator.className = 'ai-turn';
+    }
+}
+
 function formatTime(seconds) {
     var mins = Math.floor(seconds / 60);
     var secs = seconds % 60;
@@ -142,6 +157,7 @@ function onCardClick(event) {
         firstSelection = null;
         secondSelection = null;
         if (!checkWin() && gameMode === 'ai') {
+            updateTurnIndicator();
             lockBoard = true;
             setTimeout(makeAIMove, 1200);
         }
@@ -155,6 +171,7 @@ function onCardClick(event) {
         resetSelections();
         if (gameMode === 'ai') {
             isPlayerTurn = false;
+            updateTurnIndicator();
             setTimeout(makeAIMove, 800);
         }
     }, 800);
@@ -236,6 +253,7 @@ function makeAIMove() {
             hideCard(secondCard);
             lockBoard = false;
             isPlayerTurn = true;
+            updateTurnIndicator();
         }
     }, 1600);
 }
@@ -276,6 +294,7 @@ function init() {
     }
     attachEventListeners();
     startTimer();
+    updateTurnIndicator();
 }
 
 function endGame() {
