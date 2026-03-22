@@ -89,19 +89,25 @@ function updateScoreDisplay() {
 
 function updateTurnIndicator() {
     var indicator = document.getElementById('turn-indicator');
+    var contenedor = document.getElementById('contenedor');
+    var restartBtn = document.getElementById('restartBtn');
     if (gameMode !== 'ai') {
         indicator.style.display = 'none';
+        contenedor.classList.remove('board-locked');
+        restartBtn.disabled = false;
         return;
     }
     indicator.style.display = 'block';
     if (isPlayerTurn) {
         indicator.textContent = '🎮 Tu turno';
-        indicator.className = 'player-turn';
         indicator.style.backgroundColor = 'rgba(76, 175, 80, 0.8)';
+        contenedor.classList.remove('board-locked');
+        restartBtn.disabled = false;
     } else {
         indicator.textContent = '🤖 Turno de la IA';
-        indicator.className = 'ai-turn';
         indicator.style.backgroundColor = 'rgba(244, 67, 54, 0.8)';
+        contenedor.classList.add('board-locked');
+        restartBtn.disabled = true;
     }
 }
 
